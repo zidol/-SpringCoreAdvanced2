@@ -22,7 +22,9 @@ public class AdvisorTest {
     void advisorTest1() {
         ServiceInterface target = new ServiceImpl();
         ProxyFactory proxyFactory = new ProxyFactory(target);
-        //
+        //new DefaultPointcutAdvisor : Advisor 인터페이스의 가장 일반적인 구현체이다.
+        // 생성자를 통해 하나의 포인트컷과 하나의 어드바이스를 넣어주면 된다. 어드바이저는 하나의 포인트컷과 하나의 어드바이스로 구성된다.
+        //Pointcut.TRUE : 항상 true 를 반환하는 포인트컷
         DefaultPointcutAdvisor advisor = new DefaultPointcutAdvisor(Pointcut.TRUE, new TimeAdvice());
         proxyFactory.addAdvisor(advisor);
         ServiceInterface proxy = (ServiceInterface) proxyFactory.getProxy();
@@ -62,6 +64,7 @@ public class AdvisorTest {
         proxy.find();
     }
 
+    //Pointcut 관련 인터페이스 - 스프링 제공
     static class MyPointcut implements Pointcut {
 
         @Override

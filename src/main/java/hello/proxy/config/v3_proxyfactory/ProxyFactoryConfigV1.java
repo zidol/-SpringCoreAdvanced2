@@ -11,6 +11,12 @@ import org.springframework.aop.support.NameMatchMethodPointcut;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * 포인트컷은 NameMatchMethodPointcut 을 사용한다. 여기에는 심플 매칭 기능이 있어서 * 을 매칭할 수 있다.
+ * request* , order* , save* : request 로 시작하는 메서드에 포인트컷은 true 를 반환한다. 나머지도 같다.
+ * 이렇게 설정한 이유는 noLog() 메서드에는 어드바이스를 적용하지 않기 위해서다.
+ * 어드바이저는 포인트컷( NameMatchMethodPointcut ), 어드바이스( LogTraceAdvice )를 가지고 있다. 프록시 팩토리에 각각의 target 과 advisor 를 등록해서 프록시를 생성한다. 그리고 생성된 프록시를 스프링 빈으로 등록한다.
+ */
 @Slf4j
 @Configuration
 public class ProxyFactoryConfigV1 {
