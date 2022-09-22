@@ -31,7 +31,7 @@ public class PackageLogTracePostProcessor implements BeanPostProcessor {
         //프록시 적용 대상이 아니면 원본을 그대로 진행
         String packageName = bean.getClass().getPackageName();
 
-        if (!packageName.startsWith(basePackage)) {
+        if (!packageName.startsWith(basePackage)) { //특정 패키지만 적용 시키기 위해
             return bean;
         }
 
