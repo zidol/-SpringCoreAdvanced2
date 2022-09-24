@@ -29,7 +29,7 @@
 스프링은 이 문제를 해결하기 위해 하나의 프록시에 여러 어드바이저를 적용할 수 있게 만들어두었다.
 ![img.png](img/proxy-factory-manyAdvisor.png)
 ![img.png](img/oneProxy-manyAdvisor.png)
-## 4. 빈 후처리기
+## 4. 빈 후처리기 - 완료 일 2022.09.24
 ![img.png](img/beanpost.png)
 
 - @Bean 이나 컴포넌트 스캔으로 스프링 빈을 등록하면, 스프링은 대상 객체를 생성하고 스프링 컨테이너 내부의 빈 저장소에 등록한다. 그리고 이후에는 스프링 컨테이너를 통해 등록한 스프링 빈을 조회해서 사용하면 된다.
